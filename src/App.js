@@ -17,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          {!user && <Route path="/sign-up" component={SignUp}/>}
+          {!user && <Route exact path="/" component={SignUp}/>}
           {!user && <Route path="/login" component={Login}/> }
           <Route path="/reset-password" component={ResetPassword}/>
           {user && <Route path="/" component={Dashboard}/>}

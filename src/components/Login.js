@@ -29,13 +29,13 @@ function Login() {
     }
 
     return (
-        <div className={styles.loginPage}>
+        <div className={styles.authPage}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.headings}>
                     <h1 className={styles.heading}>Welcome back</h1>
                     <h2 className={styles.subheading}>
                         Don't have an account?
-                        <Link to="/sign-up">
+                        <Link to="/">
                             Sign Up
                         </Link>
                     </h2>

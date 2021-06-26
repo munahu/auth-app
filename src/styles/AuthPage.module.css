@@ -1,9 +1,9 @@
-.loginPage {
-    background: #f0f0f0;
-    height: 100vh;
+.authPage {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
 }
 
 .headings {
@@ -14,77 +14,72 @@
 }
 
 .heading {
-    color: rgb(63, 63, 63);
-    font-size: 2.2rem;
     font-weight: 900;
+    color: rgb(63, 63, 63);
 }
 
 .subheading {
     margin-top: 0.6em;
     margin-bottom: 1em;
-    font-size: 1rem;
     font-weight: 400;
 }
 
 .subheading a {
-    text-decoration: 2px underline rgb(46, 46, 46);
     margin-left: 0.5em;
+    cursor: pointer;
     font-weight: 700;
     color: rgb(46, 46, 46);
-    cursor: pointer;
+    text-decoration: 2px underline rgb(46, 46, 46);
 }
 
 .form {
-    background: white;
-    color: rgb(46, 46, 46);
     border-radius: 15px;
-    width: 40%;
-    height: 55%;
-    padding: 2em 1em;
+    min-width: 40%;
+    color: rgb(46, 46, 46);
+    background: white;
     box-shadow: 10px 10px 10px rgb(240, 237, 237);
 }
 
 .errorMessage {
+    display: flex;
     width: calc(70% - 2em);
+    margin: 0 auto;
     padding: 0.5em 1em;
-    background: rgba(255, 220, 122, 0.212);
     font-size: 0.84rem;
     font-weight: 500;
-    display: flex;
-    margin: 0 auto;
+    background: rgba(255, 220, 122, 0.212);
 }
 
 .section {
-    border-radius: 8px;
-    margin: 1em auto;
-    height: 3.6em;
     display: flex;
-    width: 70%;
     flex-direction: column;
     justify-content: center;
+    margin: 1em auto;
+    height: 3.6em;
+    border-radius: 8px;
     border: 1px solid rgb(236, 236, 236);
 }
 
 .section label,
 .section input {
-    cursor: text;
     padding-left: 1.2em;
+    cursor: text;
     font-weight: 700;
 }
 
 .section label {
-    font-size: 0.75rem;
     padding-top: 0.5em;
+    font-size: 0.75rem;
 }
 
 .section input {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    font-size: 1rem;
-    outline: none;
     border: none;
     box-sizing: border-box;
+    outline: none;
     height: 100%;
+    font-size: 1rem;
 }
 
 .password {
@@ -97,10 +92,10 @@
 }
 
 .section a {
-    cursor: pointer;
     position: absolute;
     bottom: -2em;
     left: 0;
+    cursor: pointer;
     font-size: 0.8rem;
     color: rgb(46, 46, 46);
     text-decoration: 1px underline rgb(46, 46, 46);
@@ -115,23 +110,81 @@
 }
 
 .buttonContainer {
-    height: 25%;
     display: flex;
     justify-content: center;
+    height: 25%;
 }
 
 .buttonContainer button {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: 0.6em 4em;
+    height: 3em;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-    margin-top: 0.3em;
-    height: 53%;
     font-family: 'Satoshi', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    /* background: rgb(87, 132, 255); */
     background: rgba(17, 114, 204, 0.753);
     color: white;
-    border: none;
-    border-radius: 30px;
-    display: flex;
-    padding: 0.6em 4em;
+}
+
+@media(max-width: 456px) {
+    .heading {
+        font-size: 1.6rem;
+    }
+
+    .subheading {
+        font-size: 0.9rem;
+    }
+    
+    .form {
+        width: 90%;
+        padding: 2em 0;
+    }
+    
+    .errorMessage {
+        font-size: 0.75rem;
+    }
+    
+    .section {
+        width: 80%;
+        min-width: 70px;
+    }
+}
+
+@media(min-width: 456px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .subheading {
+        font-size: 0.9rem;
+    }
+    
+    .form {
+        width: 80%;
+        max-width: 450px;
+    }
+    
+    .errorMessage {
+        font-size: 0.75rem;
+    }
+    
+}
+
+@media(min-width: 750px) {
+    .heading {
+        font-size: 2.2rem;
+    }
+
+    .section {
+        width: 70%;
+    }
+
+    .errorMessage {
+        font-size: 0.85rem;
+    }
 }

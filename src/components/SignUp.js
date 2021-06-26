@@ -42,7 +42,7 @@ function SignUp() {
     }
 
     return (
-        <div className={styles.loginPage}>
+        <div className={styles.authPage}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.headings}>
                     <h1 className={styles.heading}>Create an account</h1>
