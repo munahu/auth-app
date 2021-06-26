@@ -1,5 +1,4 @@
 import firebase from '../firebase';
-import { auth } from '../firebase';
 import { useEffect, useState } from 'react';
 
 
@@ -19,15 +18,10 @@ function useFirebaseAuth() {
     function resetPassword (email) {
       firebase.auth().sendPasswordResetEmail(email)
       .then(() => {
-        console.log('clicked');
-        // Password reset email sent!
-        // ..
+        return;
       })
       .catch((error) => {
-        console.log(error);
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ..
+        return; 
      });
     }
 

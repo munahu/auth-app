@@ -21,7 +21,7 @@
 
 .subheading {
     margin-top: 0.6em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     font-size: 1rem;
     font-weight: 400;
 }
@@ -42,6 +42,16 @@
     height: 50%;
     padding: 2em 1em;
     box-shadow: 10px 10px 10px rgb(240, 237, 237);
+}
+
+.errorMessage {
+    width: 75%;
+    padding: 0.5em 1em;
+    background: rgba(255, 220, 122, 0.212);
+    font-size: 0.84rem;
+    font-weight: 500;
+    display: flex;
+    margin: 0 auto;
 }
 
 .section {
@@ -79,6 +89,11 @@
 
 .password {
     position: relative;
+}
+
+.password input {
+    letter-spacing: 0.5em;
+    font-size: 1.1rem;
 }
 
 .section a {

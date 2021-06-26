@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import useFirebaseAuth from '../hooks/useFirebaseAuth';
-import styles from '../styles/SignUp.module.css';
+import styles from '../styles/AuthPage.module.css';
 
 function SignUp() {  
     const { createUser } = useFirebaseAuth();
@@ -53,13 +53,13 @@ function SignUp() {
                         </Link>
                     </h2>
                 </div>
-                {error && <span>{error}</span>}
+                { error && <span className={styles.errorMessage}>{error}</span>}
                 <div className={`${styles.inputs} ${styles.signUpInputs}`}>
                     <div className={styles.section}>
                         <label htmlFor="email">Email address</label>
                         <input onChange={handleEmailChange} id="email" type="email" />
                     </div>
-                    <div className={styles.section}>
+                    <div className={`${styles.section} ${styles.password}`}>
                         <label htmlFor="password">Password</label>
                         <input onChange={handlePasswordChange} id="password" className={styles.password} type="password" />
                     </div>

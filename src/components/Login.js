@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import useFirebaseAuth from '../hooks/useFirebaseAuth';
-import styles from '../styles/SignUp.module.css';
+import styles from '../styles/AuthPage.module.css';
 
-function Login(props) {  
+function Login() {  
     const { login } = useFirebaseAuth();
-
-    const { resetPassword } = useFirebaseAuth();
 
     const [error, setError] = useState();
 
@@ -19,11 +17,6 @@ function Login(props) {
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
-    }
-
-    const handleForgotPasswordClick = (email) => {
-        console.log(email);
-        // resetPassword(email);
     }
 
     async function handleSubmit(e) {
@@ -47,7 +40,7 @@ function Login(props) {
                         </Link>
                     </h2>
                 </div>
-                { error && <span>{error}</span>}
+                { error && <span className={styles.errorMessage}>{error}</span>}
                 <div className={styles.inputs}>
                     <div className={styles.section}>
                         <label htmlFor="email">Email address</label>
