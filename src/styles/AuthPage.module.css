@@ -14,7 +14,7 @@
 }
 
 .heading {
-    font-weight: 900;
+    font-weight: 900;   
     color: rgb(63, 63, 63);
 }
 
@@ -34,10 +34,13 @@
 
 .form {
     border-radius: 15px;
-    min-width: 40%;
     color: rgb(46, 46, 46);
     background: white;
     box-shadow: 10px 10px 10px rgb(240, 237, 237);
+}
+
+.content {
+    margin: 2em 0;
 }
 
 .errorMessage {
@@ -117,8 +120,7 @@
 
 .buttonContainer button {
     display: flex;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 1em;
     padding: 0.6em 4em;
     height: 3em;
     border: none;
@@ -131,60 +133,42 @@
     color: white;
 }
 
-@media(max-width: 456px) {
+@media(max-width: 518px) {
     .heading {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
 
     .subheading {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .form {
-        width: 90%;
-        padding: 2em 0;
+        width: 95%;
     }
-    
-    .errorMessage {
-        font-size: 0.75rem;
-    }
-    
+
     .section {
-        width: 80%;
-        min-width: 70px;
+        width: 72%;
     }
+
 }
 
-@media(min-width: 457px) {
+@media(min-width: 519px) {
     .heading {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
 
     .subheading {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     
     .form {
-        width: 80%;
-        max-width: 450px;
-    }
-    
-    .errorMessage {
-        font-size: 0.75rem;
-    }
-    
-}
-
-@media(min-width: 750px) {
-    .heading {
-        font-size: 2.2rem;
+        width: 40%;
+        min-width: 480px;
     }
 
     .section {
         width: 70%;
     }
 
-    .errorMessage {
-        font-size: 0.85rem;
-    }
 }
+

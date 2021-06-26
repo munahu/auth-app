@@ -44,28 +44,30 @@ function SignUp() {
     return (
         <div className={styles.authPage}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.headings}>
-                    <h1 className={styles.heading}>Create an account</h1>
-                    <h2 className={styles.subheading}>
-                        Already have an account? 
-                        <Link to="/login">
-                            Log in
-                        </Link>
-                    </h2>
-                </div>
-                { error && <span className={styles.errorMessage}>{error}</span>}
-                <div className={`${styles.inputs} ${styles.signUpInputs}`}>
-                    <div className={styles.section}>
-                        <label htmlFor="email">Email address</label>
-                        <input onChange={handleEmailChange} id="email" type="email" />
+                <div className={styles.content}>
+                    <div className={styles.headings}>
+                        <h1 className={styles.heading}>Create an account</h1>
+                        <h2 className={styles.subheading}>
+                            Already have an account? 
+                            <Link to="/login">
+                                Log in
+                            </Link>
+                        </h2>
                     </div>
-                    <div className={`${styles.section} ${styles.password}`}>
-                        <label htmlFor="password">Password</label>
-                        <input onChange={handlePasswordChange} id="password" className={styles.password} type="password" />
+                    { error && <span className={styles.errorMessage}>{error}</span>}
+                    <div className={`${styles.inputs} ${styles.signUpInputs}`}>
+                        <div className={styles.section}>
+                            <label htmlFor="email">Email address</label>
+                            <input onChange={handleEmailChange} id="email" type="email" />
+                        </div>
+                        <div className={`${styles.section} ${styles.password}`}>
+                            <label htmlFor="password">Password</label>
+                            <input onChange={handlePasswordChange} id="password" className={styles.password} type="password" />
+                        </div>
                     </div>
-                </div>
-                <div className={styles.buttonContainer}>
-                    <button>Sign up</button>
+                    <div className={styles.buttonContainer}>
+                        <button>Sign up</button>
+                    </div>
                 </div>
             </form>
         </div>
