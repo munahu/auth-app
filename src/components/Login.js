@@ -50,6 +50,8 @@ function Login() {
                         <div className={`${styles.section} ${styles.password}`}>
                             <label htmlFor="password">Password</label>
                             <input onChange={handlePasswordChange} id="password" type="password" />
+                        </div>
+                        <div className={styles.forgotPassword}>
                             <Link to="/reset-password">
                                 Forgot password?
                             </Link>
