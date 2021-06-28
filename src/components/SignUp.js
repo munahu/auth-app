@@ -57,6 +57,10 @@ function SignUp() {
                     { error && <span className={styles.errorMessage}>{error}</span>}
                     <div className={`${styles.inputs} ${styles.signUpInputs}`}>
                         <div className={styles.section}>
+                            <label htmlFor="name">Full name</label>
+                            <input id="name" type="text" />
+                        </div>
+                        <div className={styles.section}>
                             <label htmlFor="email">Email address</label>
                             <input onChange={handleEmailChange} id="email" type="email" />
                         </div>

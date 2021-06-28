@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f0f0f0;
 }
 
 .headings {
@@ -35,8 +34,6 @@
 .form {
     border-radius: 15px;
     color: rgb(46, 46, 46);
-    background: white;
-    box-shadow: 10px 10px 10px rgb(240, 237, 237);
 }
 
 .content {
@@ -57,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1em auto;
+    margin: 2.2em auto;
     height: 3.6em;
     border-radius: 8px;
     border: 1px solid rgb(236, 236, 236);
@@ -85,18 +82,26 @@
     font-size: 1rem;
 }
 
+.password {
+    margin-bottom: 1em;
+}
+
 .password input {
     letter-spacing: 0.5em;
     font-size: 1.1rem;
 }
 
 .forgotPassword {
-    margin: 0.8em;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .forgotPassword a {
     cursor: pointer;
     font-size: 0.8rem;
+    font-weight: 700;
     color: rgb(46, 46, 46);
     text-decoration: 1px underline rgb(46, 46, 46);
 }
@@ -117,6 +122,7 @@
 
 .buttonContainer button {
     display: flex;
+    margin: 2em 0;
     padding: 0.6em 4em;
     height: 3em;
     border: none;
@@ -132,9 +138,8 @@
 @media(max-width: 518px) {
     .authPage {
         align-items: flex-start;
-        height: 90vh;
     }
-
+    
     .heading {
         font-size: 2rem;
     }
@@ -144,12 +149,14 @@
     }
     
     .form {
-        margin-top: 3em;
+        margin-top: 2.5em;
         width: 100%;
     }
 
     .section {
-        width: 85%;
+        min-width: 300px;
+        max-width: 350px;
+        width: 80%;
         height: 4em;
     }
 
@@ -159,11 +166,7 @@
 
     .section input {
         font-size: 1.1rem;
-    }
-
-    .buttonContainer {
-        margin-top: 10vh 0;
-    }
+    }   
 }
 
 @media(min-width: 519px) {
@@ -183,15 +186,5 @@
     .section {
         width: 70%;
     }
-
-    .forgotPassword {
-        margin: 0.8em;
-        margin-left: 3.8em;
-    }
-
-    .buttonContainer {
-        margin: 1em 0;
-    }
-
 }
 

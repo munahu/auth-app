@@ -5,4 +5,5 @@ h2 {
 
 .App {
     font-family: 'Satoshi', sans-serif;
+    overflow-y: hidden;
 }
