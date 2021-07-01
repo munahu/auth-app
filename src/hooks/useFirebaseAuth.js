@@ -1,14 +1,24 @@
 import firebase from '../firebase';
 import { useEffect, useState } from 'react';
 
-
 function useFirebaseAuth() {
     const [user, setUser] = useState();
 
-    async function createUser(email, password) {
-      await (firebase.auth().createUserWithEmailAndPassword(email, password))
-      .then(response => {
+    async function createUser(email, password, name) {
+      await firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userInfo) => {
+        addUserToDb(name, userInfo.user.uid);
       })
+    }
+
+    function addUserToDb (name, userId) {
+      const userRef = firebase.database().ref("Users/");
+      const user = {
+        name: name,
+        userId: userId
+      }
+
+      userRef.push(user);
     }
     
     function login(email, password) {
@@ -33,7 +43,7 @@ function useFirebaseAuth() {
       });
       return;
     }
-    
+
     useEffect(() => {
       const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
         if (user) {

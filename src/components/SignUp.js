@@ -7,9 +7,14 @@ function SignUp() {
     const { createUser } = useFirebaseAuth();
 
     const [error, setError] = useState();
-    
+
+    const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
     
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -19,10 +24,10 @@ function SignUp() {
         setPassword(e.target.value);
     }
     
-    async function handleSubmit(e) {
+   async function handleSubmit(e) {
         e.preventDefault();
         try {
-            await createUser(email, password);
+            await createUser(email, password, name)
         } catch(err) {
             handleErrors(err.message);
         }
@@ -58,7 +63,7 @@ function SignUp() {
                     <div className={`${styles.inputs} ${styles.signUpInputs}`}>
                         <div className={styles.section}>
                             <label htmlFor="name">Full name</label>
-                            <input id="name" type="text" />
+                            <input onChange={handleNameChange} id="name" type="text" />
                         </div>
                         <div className={styles.section}>
                             <label htmlFor="email">Email address</label>
