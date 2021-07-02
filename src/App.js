@@ -1,7 +1,8 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import useFirebaseAuth from './hooks/useFirebaseAuth';
 import SignUp from './components/SignUp';
@@ -16,12 +17,19 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          {!user && <Route exact path="/" component={SignUp}/>}
-          {!user && <Route path="/login" component={Login}/> }
+          <Route path="/">
+            <Redirect to="/signup"/>
+          </Route>
+          <Route path="/signup">
+            { user ? <Redirect to="/dashboard"/> : <SignUp/>}
+          </Route>
+          <Route path="/dashboard">
+            { !user ? <Redirect to="/signup"/> : <Dashboard/>}
+          </Route> 
+          <Route path="/login">
+            { user ? <Redirect to="/dashboard"/> : <Login/>}
+          </Route>
           <Route path="/reset-password" component={ResetPassword}/>
-          {user && <Route path="/" component={Dashboard}/>}
-        </Switch>
       </div>
     </Router>
   );

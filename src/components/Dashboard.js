@@ -38,7 +38,7 @@ function Dashboard() {
     return (
         <div className={styles.dashboard}>  
             {name && 
-            <form onSubmit={signOut}>
+            <form onSubmit={signOut} className={styles.form}>
                 <h1 className={styles.heading}>{name}, you're now logged in!</h1>
                 <h2 className={styles.subheading}>There's nothing to see quite yet. But stay tuned, I'm building an exciting chat app.</h2>
                 <button className={styles.signOut}>Sign out</button>

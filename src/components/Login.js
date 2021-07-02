@@ -36,7 +36,7 @@ function Login() {
                         <h1 className={styles.heading}>Welcome back</h1>
                         <h2 className={styles.subheading}>
                             Don't have an account?
-                            <Link to="/">
+                            <Link to="/signup">
                                 Sign Up
                             </Link>
                         </h2>
