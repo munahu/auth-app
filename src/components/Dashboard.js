@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useFirebaseAuth from '../hooks/useFirebaseAuth';
 import styles from '../styles/Dashboard.module.css';
 
@@ -11,23 +11,29 @@ function Dashboard() {
     const [name, setName] = useState();
 
     useEffect(() => {
-        if (user) {
-            getUsername();
-        }
-    }, [user])
-
-    function getUsername() {
-        const userRef = firebase.database().ref("Users/");
-        userRef.on('value', function(snapshot) {
-          snapshot.forEach(function(childSnapshot) {
-            var childData = childSnapshot.val();
-            const userId = childData.userId;
-            if (userId === user.uid) {
-              capitalizeName(childData.name)
-            }
-          });
+      const userRef = firebase.database().ref("Users/");
+      const onValueChange = function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          var childData = childSnapshot.val();
+          const userId = childData.userId;
+          if (userId === user.uid) {
+            capitalizeName(childData.name)
+          };
         });
       }
+
+      if (user) {
+        function getUsername() {
+            userRef.on("value", onValueChange)
+          }
+          getUsername();
+      }
+
+      return () => {
+        userRef.off("value", onValueChange);
+      }
+      
+    }, [user])
 
       function capitalizeName(name) {
         const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);

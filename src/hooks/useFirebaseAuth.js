@@ -27,12 +27,6 @@ function useFirebaseAuth() {
     
     function resetPassword (email) {
       firebase.auth().sendPasswordResetEmail(email)
-      .then(() => {
-        return;
-      })
-      .catch((error) => {
-        return; 
-     });
     }
 
     const signOut= () => {
@@ -50,11 +44,13 @@ function useFirebaseAuth() {
           setUser(user);
         }
       });
-      return unsubscribe
+
+      return unsubscribe;
+
       }, [user])
 
     return {
-        createUser, login, resetPassword,  signOut, user
+        createUser, login, resetPassword, signOut, user
     }
 }
 
