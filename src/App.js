@@ -8,7 +8,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ResetPassword from './components/ResetPassword';
-import Dashboard from "./components/Dashboard";
+import Dashboard from './components/Dashboard';
 import './App.css';
 import { useEffect, useState } from "react";
 
